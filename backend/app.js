@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 require('dotenv').config();
 const app = express();
 app.use(cors());
-const port = 3000;
+const port = 5000;
 app.use(express.json());
 
 const connection = mysql.createConnection({
@@ -16,7 +16,7 @@ const connection = mysql.createConnection({
 });
 
 const corsOptions = {
-  origin: 'http://localhost:3001',
+  origin: 'http://localhost:3000',
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
