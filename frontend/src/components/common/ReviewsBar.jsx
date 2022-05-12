@@ -13,19 +13,20 @@ const ReviewsBar = (props) => {
     return 'hs1(' + c + ', 100%, 50%)';
   };
   return (
-    <CircularProgressbar
+    <div>
+<CircularProgressbar
       value={score}
       text={`${score} %`}
       label="a"
       circleRatio={0.8}
       styles={{
         trail: {
-          strokeLinecap: 'butt',
+
           transform: 'rotate(-126deg)',
           transformOrigin: 'center center',
         },
         path: {
-          strokeLinecap: 'butt',
+
           transform: 'rotate(-126deg)',
           transformOrigin: 'center center',
           stroke: calcColor(score, 0, 120),
@@ -36,6 +37,7 @@ const ReviewsBar = (props) => {
       }}
       strokeWidth={10}
     />
+    </div>
   );
 };
 
