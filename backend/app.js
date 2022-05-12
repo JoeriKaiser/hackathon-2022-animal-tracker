@@ -36,4 +36,13 @@ app.get('/', (req, res) => {
   res.send('Welcome to the Chou Pets app !');
 });
 
-app.get('/api/datas', (req, res) => {});
+app.get('/api/animals', (req, res) => {
+  connection.query('SELECT * FROM petsdata', (err, result) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('error to display the datas from the databases');
+    } else {
+      res.status(200).json(result);
+    }
+  });
+});
