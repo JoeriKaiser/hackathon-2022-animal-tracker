@@ -46,3 +46,23 @@ app.get('/api/animals', (req, res) => {
     }
   });
 });
+
+app.post('/api/datas', cors(corsOptions), (req, res) => {
+  const { datas } = req.body;
+  const now = new Date();
+  console.log(`${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`);
+  const time = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+  connection.query(
+    `INSERT INTO datas (new_datas, new_time) VALUES (?,?)`,
+    [datas, time],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send('Impossible to POST datas');
+      } else {
+        console.log('datas recues');
+        res.status(200).send('Your datas are posted');
+      }
+    }
+  );
+});
