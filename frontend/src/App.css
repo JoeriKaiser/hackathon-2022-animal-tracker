@@ -41,7 +41,10 @@
 
 .glass-container {
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
   place-items: center;
+  justify-content: center;
   width: 60%;
   height: 390px;
   background: rgba(255, 255, 255, 0.55);
@@ -50,6 +53,11 @@
   -webkit-backdrop-filter: blur(6px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+span {
+  font-size: 20px;
+  color: #8884FF;
 }
 
 #chart {
@@ -69,4 +77,12 @@
 #upload {
   width: 30px;
   height: 30px;
+}
+
+/* Elipse */
+
+
+
+.elipse {
+  width: 80%;
 }
