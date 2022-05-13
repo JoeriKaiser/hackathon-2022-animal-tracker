@@ -30,8 +30,14 @@ function App() {
   };
 
   useEffect(() => {
-    getAnimalData();
     getStatusData();
+    getAnimalData();
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      getStatusData();
+    }, 5000);
   }, []);
 
   return (
