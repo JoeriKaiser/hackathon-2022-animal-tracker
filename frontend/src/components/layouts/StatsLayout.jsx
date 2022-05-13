@@ -10,12 +10,15 @@ function StatsLayout() {
   const animalUUID = animalsArray.uuid;
   const statusUUID = statusArray.uuid;
   console.log(statusArray.datas);
-  const statusData = statusArray.data;
+  const statusData = statusArray.datas;
   const [reviewScore, setReviewScore] = useState(10);
 
   const convertDataToPercentage = (y, x) => {
     return (y / x) * 100;
   };
+
+  console.log('Bonjour array', statusArray);
+  console.log('Bonjour status', statusData);
   console.log(convertDataToPercentage(10, 17));
   return (
     <div className='stats-container'>
