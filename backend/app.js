@@ -47,6 +47,33 @@ app.get('/api/animals', (req, res) => {
   });
 });
 
+app.get('/api/data', (req, res) => {
+  connection.query('SELECT * FROM data', (err, result) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('error to display the datas from the databases');
+    } else {
+      res.status(200).json(result);
+    }
+  });
+});
+
+app.post('/api/animals', (request, response) => {
+  const { nom, poids, anniversaire, photo, type, uuid } = request.body;
+  connection.query(
+    'INSERT INTO petsdata (nom, poids, anniversaire, photo, type, uuid) VALUES (?, ?, ?, ?, ?, ?)',
+    [nom, poids, anniversaire, photo, type, uuid],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send('Impossible to POST datas');
+      } else {
+        response.status(200).send('Animal successfully saved, welcome !');
+      }
+    }
+  );
+});
+
 app.post('/api/datas', cors(corsOptions), (req, res) => {
   const { datas, uuid } = req.body;
   const now = new Date();
