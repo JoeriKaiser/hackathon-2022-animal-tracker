@@ -4,7 +4,7 @@ import chart from '../../assets/img/Chart-11.png';
 import ReviewsBar from '../common/ReviewsBar';
 
 function StatsLayout() {
-  const [reviewScore, setReviewScore] = useState(90);
+  const [reviewScore, setReviewScore] = useState(10);
   return (
     <div className='stats-container'>
       <div className='glass-container'>
