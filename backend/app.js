@@ -48,13 +48,17 @@ app.get('/api/animals', (req, res) => {
 });
 
 app.post('/api/datas', cors(corsOptions), (req, res) => {
-  console.log(req.body);
+  const { datas, uuid } = req.body;
   const now = new Date();
   console.log(`${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`);
   const time = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+  const actualDate = `${now.getDate()}-${
+    now.getMonth() + 1
+  }-${now.getFullYear()}`;
+  console.log(actualDate);
   connection.query(
-    `INSERT INTO data (datas, ) VALUES (?,?)`,
-    [datas, time],
+    `INSERT INTO data (datas, uuid, timestamp, date_record ) VALUES (?,?,?,?)`,
+    [datas, uuid, time, actualDate],
     (err, result) => {
       if (err) {
         console.log(err);
