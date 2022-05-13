@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 require('dotenv').config();
 const app = express();
 app.use(cors());
-const port = 3000;
+const port = 5000;
 app.use(express.json());
 
 const connection = mysql.createConnection({
@@ -16,7 +16,7 @@ const connection = mysql.createConnection({
 });
 
 const corsOptions = {
-  origin: 'http://localhost:3001',
+  origin: 'http://localhost:3000',
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
@@ -46,3 +46,22 @@ app.get('/api/animals', (req, res) => {
     }
   });
 });
+
+app.post('/api/animals', (request, response) => {
+  const { nom, poids, anniversaire, photo, type, uuid } = request.body;
+  connection.query(
+    "INSERT INTO petsdata (nom, poids, anniversaire, photo, type, uuid) VALUES (?, ?, ?, ?, ?, ?)",
+    [nom, poids, anniversaire, photo, type, uuid],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+        response.status(500).send("Error saving animal");
+      } else {
+        response.status(200).send('Animal successfully saved');
+      }
+    }
+  );
+});
+
+
+
