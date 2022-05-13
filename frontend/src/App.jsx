@@ -7,6 +7,7 @@ import StatsLayout from './components/layouts/StatsLayout';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import './components/carousel.css';
+import Form from './components/Form/Form';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
             <StatsLayout />
             <StatsLayout />
             <StatsLayout />
-            <StatsLayout />
+            <Form />
             </Carousel>
     </div>
     
