@@ -1,100 +1,114 @@
 :root {
-  --font-primary: 'Trocchi', serif;
-  --color-primary: #8884ff;
-  --color-secondary: #fde2ff;
-  --color-white: #f4f4f5;
-  --color-black: #131112;
+    --font-primary: 'Trocchi', serif;
+    --color-primary: #8884ff;
+    --color-secondary: #fde2ff;
+    --color-white: #f4f4f5;
+    --color-black: #131112;
 }
+
 #root {
-  background-color: #f4f4f5;
-  height: 100vh;
-  font-family: var(--font-primary);
+    background-color: #f4f4f5;
+    height: 100vh;
+    font-family: var(--font-primary);
 }
 
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .profile-picture-container {
-  position: relative;
+    position: relative;
 }
 
 .profile-picture-container #main-img {
-  border: 4px solid var(--color-primary);
-  width: 220px;
-  height: 200px;
-  border-radius: 50%;
+    border: 4px solid var(--color-primary);
+    width: 220px;
+    height: 200px;
+    border-radius: 50%;
 }
 
 .section-container {
-  padding: 1rem;
-  display: grid;
-  place-items: center;
-  color: var(--color-primary);
-  font-size: 1.6rem;
+    padding: 1rem;
+    display: grid;
+    place-items: center;
+    color: var(--color-primary);
+    font-size: 1.6rem;
 }
 
 .stats-container {
-  display: grid;
-  place-items: center;
+    display: grid;
+    place-items: center;
 }
 
 .glass-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  place-items: center;
-  justify-content: center;
-  width: 60%;
-  height: 390px;
-  background: rgba(255, 255, 255, 0.55);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    place-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 390px;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 span {
-  font-size: 24px;
-  color: #8884ff;
+    font-size: 24px;
+    color: #8884ff;
 }
 
 #chart {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 #upload-button {
-  bottom: 30px;
-  right: 30px;
-  position: absolute;
-  border: none;
-  background-color: white;
-  border-radius: 50%;
-  border: 3px solid var(--color-primary);
+    bottom: 30px;
+    right: 30px;
+    position: absolute;
+    border: none;
+    background-color: white;
+    border-radius: 50%;
+    border: 3px solid var(--color-primary);
 }
 
 #upload {
-  width: 30px;
-  height: 30px;
+    width: 30px;
+    height: 30px;
 }
+
 
 /* Elipse */
 
 .elipse {
-  width: 80%;
+    width: 80%;
 }
 
 .chart-container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  padding: 2rem;
-  height: 100%;
-  width: 100%;
-  gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 1rem;
+    height: 200px;
+    width: 100%;
+    gap: 1rem;
 }
+
+.chart-base-container {
+    height: 100%;
+}
+
+.bar-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .bar {
-  height: 40%;
-  align-self: end;
-  background-color: var(--color-primary);
+    height: 40%;
+    align-self: end;
+    background-image: linear-gradient( to bottom, #8884ff, #b497fc, #d4aefb, #ecc7fb, #fde2ff);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }

@@ -25,14 +25,17 @@ function Chart() {
   dataArray.forEach((element) => {
     percentArray.push(convertDataToPercentage(element));
   });
-
-  // console.log(dataArray);
+  const newPercentArray = percentArray.slice(-12);
+  console.log('coucou new', newPercentArray);
 
   return (
-    <div className='chart-container'>
-      {percentArray.map((el) => (
-        <Bar donnee={el} />
-      ))}
+    <div className='chart-base-container'>
+      <h3>Relevée sur les 12 dernières heures</h3>
+      <div className='chart-container'>
+        {newPercentArray.map((el) => (
+          <Bar donnee={el} />
+        ))}
+      </div>
     </div>
   );
 }
