@@ -24,21 +24,17 @@ function App() {
       setStatusArray(response.data[lastElement - 1]);
     });
   };
-  // const getBlob = () => {
-  //   axios
-  //     .get('http://localhost:5000/api/animals/blob', { responseType: 'blob' })
-  //     .then((response) => {
-  //       console.log(typeof response.data);
-  //       return response.blob().then((myBlob) => {
-  //         setBlob = URL.createObjectURL(myBlob);
-  //       });
-  //     });
-  // };
+
 
   useEffect(() => {
-    // getBlob();
-    getAnimalData();
     getStatusData();
+    getAnimalData();
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      getStatusData();
+    }, 5000);
   }, []);
 
   return (
