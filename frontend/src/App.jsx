@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import './components/carousel.css';
@@ -17,9 +17,10 @@ function App() {
       .then((response) => setAnimalsArray(response.data[0]));
   };
   const getStatusData = () => {
-    axios
-      .get('http://localhost:5000/api/data')
-      .then((response) => setStatusArray(response.data[0]));
+    axios.get('http://localhost:5000/api/data').then((response) => {
+      const lastElement = response.data.length;
+      setStatusArray(response.data[lastElement - 1]);
+    });
   };
   // const getBlob = () => {
   //   axios
