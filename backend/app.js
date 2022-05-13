@@ -57,7 +57,7 @@ app.post('/api/animals', (request, response) => {
         console.error(err);
         response.status(500).send("Error saving animal");
       } else {
-        response.status(200).send('Animal successfully saved');
+        response.status(200).send('Animal successfully saved, welcome !');
       }
     }
   );
