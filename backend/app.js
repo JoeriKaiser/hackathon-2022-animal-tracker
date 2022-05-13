@@ -47,6 +47,17 @@ app.get('/api/animals', (req, res) => {
   });
 });
 
+app.get('/api/animals/blob', (req, res) => {
+  connection.query('SELECT photo FROM petsdata', (err, result) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send('error to display the datas from the databases');
+    } else {
+      res.status(200).json(result);
+    }
+  });
+});
+
 app.get('/api/data', (req, res) => {
   connection.query('SELECT * FROM data', (err, result) => {
     if (err) {
