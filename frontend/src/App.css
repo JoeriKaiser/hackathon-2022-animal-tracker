@@ -87,14 +87,14 @@ span {
 
 .chart-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(12, 1fr);
   padding: 2rem;
   height: 100%;
   width: 100%;
-  background-color: red;
+  gap: 1rem;
 }
 .bar {
+  height: 40%;
   align-self: end;
-  width: 10px;
-  background-color: blue;
+  background-color: var(--color-primary);
 }

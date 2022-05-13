@@ -11,6 +11,7 @@ function App() {
   const [blob, setBlob] = useState('');
   const [animalsArray, setAnimalsArray] = animalContext.animal;
   const [statusArray, setStatusArray] = animalContext.status;
+  const [chartArray, setChartArray] = animalContext.chart;
   const getAnimalData = () => {
     axios
       .get('http://localhost:5000/api/animals')
@@ -18,6 +19,7 @@ function App() {
   };
   const getStatusData = () => {
     axios.get('http://localhost:5000/api/data').then((response) => {
+      setChartArray(response.data);
       const lastElement = response.data.length;
       setStatusArray(response.data[lastElement - 1]);
     });
