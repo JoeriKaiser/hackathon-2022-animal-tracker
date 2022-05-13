@@ -57,8 +57,7 @@ app.post('/api/animals', (request, response) => {
         console.log(err);
         res.status(500).send('Impossible to POST datas');
       } else {
-        console.log('datas recues');
-        res.status(200).send('Your datas are posted');
+        response.status(200).send('Animal successfully saved, welcome !');
       }
     }
   );
