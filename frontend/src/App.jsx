@@ -24,7 +24,8 @@ function App() {
   };
   const getStatusData = () => {
     axios.get('http://localhost:5000/api/data').then((response) => {
-      setStatusArray(response.data[0]);
+      const lastElement = response.data.length;
+      setStatusArray(response.data[lastElement - 1]);
     });
   };
 
