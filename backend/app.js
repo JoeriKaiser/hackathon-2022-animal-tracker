@@ -52,9 +52,9 @@ app.post('/api/datas', cors(corsOptions), (req, res) => {
   const now = new Date();
   console.log(`${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`);
   const time = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
-  const actualDate = `${now.getDate()}/${
+  const actualDate = `${now.getDate()}-${
     now.getMonth() + 1
-  }/${now.getFullYear()}`;
+  }-${now.getFullYear()}`;
   console.log(actualDate);
   connection.query(
     `INSERT INTO data (datas, uuid, timestamp, date_record ) VALUES (?,?,?,?)`,
