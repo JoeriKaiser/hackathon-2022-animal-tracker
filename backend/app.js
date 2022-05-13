@@ -46,3 +46,22 @@ app.get('/api/animals', (req, res) => {
     }
   });
 });
+
+app.post('/api/animal', (request, response) => {
+  const { id, nom, poids, anniversaire, photo, type, uuid } = request.body;
+  connection.query(
+    "INSERT INTO users (id, nom, poids, anniversaire, photo, type, uuid) VALUES (?, ?, ?, ?, ?, ?, ?)",
+    [id, nom, poids, anniversaire, photo, type, uuid],
+    (err) => {
+      if (err) {
+        console.error(err);
+        response.status(500).send("Error saving animal");
+      } else {
+        response.status(201).json();
+      }
+    }
+  );
+});
+
+
+
