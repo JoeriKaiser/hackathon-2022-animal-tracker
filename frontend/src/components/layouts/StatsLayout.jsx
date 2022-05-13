@@ -27,7 +27,7 @@ function StatsLayout() {
 
     setReviewScore(donnee);
   }, [reviewScore, donnee]);
-
+  
   return (
     <div className='stats-container'>
       <div className='glass-container'>

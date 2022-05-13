@@ -4,6 +4,7 @@ import SectionLayout from '../components/layouts/SectionLayout';
 import StatsLayout from '../components/layouts/StatsLayout';
 import { Carousel } from 'react-responsive-carousel';
 import Form from '../components/Form/Form';
+import Chart from '../components/common/Chart';
 
 function Home() {
   return (
@@ -11,8 +12,9 @@ function Home() {
       <MainLayout />
       <SectionLayout />
       <Carousel>
-      <StatsLayout />
-      <Form />
+        <StatsLayout />
+        <Chart />
+        <Form />
       </Carousel>
     </>
   );

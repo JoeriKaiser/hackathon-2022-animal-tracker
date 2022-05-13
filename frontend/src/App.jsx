@@ -1,20 +1,14 @@
 import { useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-import Logo from './components/common/Logo';
-import MainLayout from './components/layouts/MainLayout';
-import SectionLayout from './components/layouts/SectionLayout';
-import StatsLayout from './components/layouts/StatsLayout';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
 import './components/carousel.css';
-import Form from './components/Form/Form';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import { GlobalContext } from './assets/context/AnimalContext';
 
 function App() {
   const animalContext = useContext(GlobalContext);
+  const [blob, setBlob] = useState('');
   const [animalsArray, setAnimalsArray] = animalContext.animal;
   const [statusArray, setStatusArray] = animalContext.status;
   const getAnimalData = () => {
@@ -28,8 +22,19 @@ function App() {
       setStatusArray(response.data[lastElement - 1]);
     });
   };
+  // const getBlob = () => {
+  //   axios
+  //     .get('http://localhost:5000/api/animals/blob', { responseType: 'blob' })
+  //     .then((response) => {
+  //       console.log(typeof response.data);
+  //       return response.blob().then((myBlob) => {
+  //         setBlob = URL.createObjectURL(myBlob);
+  //       });
+  //     });
+  // };
 
   useEffect(() => {
+    // getBlob();
     getAnimalData();
     getStatusData();
   }, []);

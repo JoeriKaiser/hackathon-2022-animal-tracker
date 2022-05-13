@@ -57,7 +57,7 @@
 
 span {
   font-size: 24px;
-  color: #8884FF;
+  color: #8884ff;
 }
 
 #chart {
@@ -81,8 +81,20 @@ span {
 
 /* Elipse */
 
-
-
 .elipse {
   width: 80%;
+}
+
+.chart-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 2rem;
+  height: 100%;
+  width: 100%;
+  background-color: red;
+}
+.bar {
+  align-self: end;
+  width: 10px;
+  background-color: blue;
 }
