@@ -7,6 +7,7 @@ function StatsLayout() {
   const animalContext = useContext(GlobalContext);
   const [animalsArray] = animalContext.animal;
   const [statusArray] = animalContext.status;
+  const [chartArray] = animalContext.chart;
   const animalUUID = animalsArray.uuid;
   const statusUUID = statusArray.uuid;
   const statusData = statusArray.datas;
@@ -18,9 +19,7 @@ function StatsLayout() {
     }
     return Math.abs(Math.ceil(-7.1428 * x + 114.28)); // dedicacee à Christel
   };
-  console.log('Ma donnee', statusData);
   const donnee = convertDataToPercentage(statusData);
-  console.log('Ma donnee 2', donnee);
 
   useEffect(() => {
     const donnee = convertDataToPercentage(statusData);
