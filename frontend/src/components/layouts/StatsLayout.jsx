@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { GlobalContext } from '../../assets/context/AnimalContext';
 import chart from '../../assets/img/Chart-11.png';
 import ReviewsBar from '../common/ReviewsBar';

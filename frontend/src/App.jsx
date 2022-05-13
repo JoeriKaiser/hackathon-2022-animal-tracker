@@ -1,9 +1,15 @@
-import { useContext, useState } from 'react';
+
+import { useContext, useState, useEffect } from 'react';
+import axios from 'axios';
 import './App.css';
 import Logo from './components/common/Logo';
-import axios from 'axios';
-import { useEffect } from 'react';
-// import AnimalContext from './assets/context/AnimalContext';
+import MainLayout from './components/layouts/MainLayout';
+import SectionLayout from './components/layouts/SectionLayout';
+import StatsLayout from './components/layouts/StatsLayout';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+import './components/carousel.css';
+import Form from './components/Form/Form';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import { GlobalContext } from './assets/context/AnimalContext';
